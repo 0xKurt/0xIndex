@@ -1,0 +1,65 @@
+{
+ "name": "Bridges",
+ "links": [
+  {
+    "name": "Polygon Bridge",
+    "logo": "https://polygon.technology/static/media/polygon-logo.82f94d69.svg",
+    "url": "https://wallet.matic.network/bridge/",
+    "description": "A two-way bridge that allows users to transfer assets between Ethereum and Polygon."
+  },
+  {
+    "name": "Optimism Gateway",
+    "logo": "https://optimism.io/img/optimism-logo.png",
+    "url": "https://gateway.optimism.io/",
+    "description": "A bridge that allows users to transfer assets between Ethereum and Optimism."
+  },
+  {
+    "name": "xDAI Bridge",
+    "logo": "https://xdaichain.com/xdai-icon-64x64.png",
+    "url": "https://bridge.xdaichain.com/",
+    "description": "A two-way bridge that allows users to transfer assets between Ethereum and xDAI."
+  },
+  {
+    "name": "Binance Smart Chain Bridge",
+    "logo": "https://cryptologos.cc/logos/binance-coin-bnb-logo.svg",
+    "url": "https://www.binance.org/en/bridge",
+    "description": "A bridge that allows users to transfer assets between Ethereum and Binance Smart Chain."
+  },
+  {
+    "name": "Arbitrum Bridge",
+    "logo": "https://arbitrum.io/static/img/logo.svg",
+    "url": "https://bridge.arbitrum.io/",
+    "description": "A bridge that allows users to transfer assets between Ethereum and Arbitrum."
+  },
+  {
+    "name": "Celo Bridge",
+    "logo": "https://celo.org/static/brand/celo-logo.836c6ff2.svg",
+    "url": "https://celo.org/developers/docs/bridge",
+    "description": "A bridge that allows users to transfer assets between Ethereum and Celo."
+  },
+  {
+    "name": "Harmony Bridge",
+    "logo": "https://harmony.one/images/harmony-logo.svg",
+    "url": "https://bridge.harmony.one/",
+    "description": "A bridge that allows users to transfer assets between Ethereum and Harmony."
+  },
+  {
+    "name": "Fusion DCRM Bridge",
+    "logo": "https://i.imgur.com/EDnawzG.png",
+    "url": "https://dcrm.network/",
+    "description": "A bridge that allows users to transfer assets between Ethereum and Fusion."
+  },
+  {
+    "name": "xDai Omnitoken Bridge",
+    "logo": "https://omni.xdaichain.com/static/media/logo.98f201e1.svg",
+    "url": "https://omni.xdaichain.com/",
+    "description": "A bridge that allows users to transfer assets between Ethereum and the xDai Omnitoken."
+  },
+  {
+    "name": "Connext Vector Bridge",
+    "logo": "https://connext.network/img/logo.png",
+    "url": "https://vector.connext.network/",
+    "description": "A bridge that allows users to transfer assets between Ethereum and other layer 2 solutions."
+  }
+ ]
+}

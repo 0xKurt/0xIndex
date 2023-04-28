@@ -1,0 +1,14 @@
+{
+ "networks": [
+  {
+   "name": "ethereum",
+   "chainId": 1,
+   "comment": "Main Ethereum network",
+   "categories": [
+    "bridge",
+    "defi",
+    "dex"
+   ]
+  }
+ ]
+}
