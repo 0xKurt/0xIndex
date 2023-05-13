@@ -6,6 +6,7 @@ import { useContext, useEffect } from "react";
 import Context from "../other/Context";
 import { TbSunMoon } from "react-icons/tb";
 import { useHistory } from "react-router-dom";
+import Brand from "./Brand";
 
 function NavBar() {
   const { state, dispatch } = useContext(Context);
@@ -36,9 +37,7 @@ function NavBar() {
     <Navbar bg="dark" variant="dark" expand="lg" className="p-3">
       <Container fluid>
         <Navbar.Brand href="#">
-          <span style={{ color: "gray", letterSpacing: "1px" }}>
-            all<b style={{ color: "white" }}>ecosystems</b>.xyz
-          </span>
+          <Brand />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
