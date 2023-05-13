@@ -30,7 +30,7 @@ const TableModal = ({ show, onHide, data }) => {
             </tr>
           </thead>
           <>
-            <TableBody projects={data.projects} max={data.length} />
+            <TableBody projects={data.projects} maxOverride={data.projects.length} />
           </>
         </Table>
       </Modal.Body>

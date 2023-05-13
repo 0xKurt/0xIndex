@@ -1,11 +1,10 @@
+import Context from "../other/Context";
 import Project from "./Project";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
-const TableBody = ({ projects, max, expand }) => {
-  const [more, setMore] = useState(false);
-  const toggleMore = () => {
-    setMore(!more);
-  };
+const TableBody = ({ projects, expand, maxOverride }) => {
+  const {state, dispatch} = useContext(Context);
+  const max = maxOverride ? maxOverride : state.maxEntries;
 
   return (
     <>
@@ -24,7 +23,7 @@ const TableBody = ({ projects, max, expand }) => {
                 style={{ color: "grey", cursor: "pointer", textAlign: "right" }}
                 onClick={expand}
               >
-                {more ? "View less" : `View more (${projects.length - max})`}
+                {`View more (${projects.length - max})`}
               </div>
             </td>
           </tr>

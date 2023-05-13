@@ -12,7 +12,6 @@ function TableGrid({ data }) {
   const [toastMessage, setToastMessage] = useState("");
   const history = useHistory();
 
-  const MAX_PROJECTS_PER_COLUMN = 6;
   const COLUMN_WIDTH = 350;
   const COLUMN_MARGIN = 20;
 
@@ -122,7 +121,6 @@ function TableGrid({ data }) {
                   <>
                     <TableBody
                       projects={col.projects}
-                      max={MAX_PROJECTS_PER_COLUMN}
                       expand={() =>
                         history.push(`/${chain}/${col.shortName.toLowerCase()}`)
                       }

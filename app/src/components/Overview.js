@@ -7,6 +7,7 @@ import ChainHeader from "./ChainHeader";
 import DownloadMap from "./DownloadMap";
 import Sort from "./Sort";
 import { stringToColor } from "../other/utils";
+import MaxItems from "./MaxItems";
 
 const Overview = () => {
   const { state, dispatch } = useContext(Context);
@@ -73,7 +74,8 @@ const Overview = () => {
       >
         <div className="d-flex justify-content-between">
           <ChainHeader network={state.network} />
-          <div className="d-flex">
+          <div className="d-flex gap-2">
+            <MaxItems />
             <Sort />
             <DownloadMap />
           </div>
