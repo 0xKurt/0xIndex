@@ -2,6 +2,7 @@ const initialState = {
   network: 1,
   sorting: "cat_asc",
   maxEntries: 6,
+  categories: [],
 };
 
 const reducer = (state, action) => {
@@ -14,6 +15,8 @@ const reducer = (state, action) => {
       return { ...state, sorting: action.payload };
     case "SET_MAX_ENTRIES":
       return { ...state, maxEntries: action.payload }; 
+    case "SET_CATEGORIES":
+      return { ...state, categories: action.payload };
     default:
       return state;
   }

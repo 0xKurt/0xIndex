@@ -8,6 +8,7 @@ import DownloadMap from "./DownloadMap";
 import Sort from "./Sort";
 import { stringToColor } from "../other/utils";
 import MaxItems from "./MaxItems";
+import SelectCategory from "./SelectCategory";
 
 const Overview = () => {
   const { state, dispatch } = useContext(Context);
@@ -36,6 +37,10 @@ const Overview = () => {
       );
       const data = await response.json();
       setCategories(data);
+      dispatch({
+        type: "SET_CATEGORIES",
+        payload: data.map(({ name, shortName }) => ({ name, shortName })),
+      });
     };
     if (state?.network?.id) init();
   }, [state?.network?.id]);
@@ -75,6 +80,7 @@ const Overview = () => {
         <div className="d-flex justify-content-between">
           <ChainHeader network={state.network} />
           <div className="d-flex gap-2">
+            <SelectCategory />
             <MaxItems />
             <Sort />
             <DownloadMap />
