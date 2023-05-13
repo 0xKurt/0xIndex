@@ -6,10 +6,13 @@ const Toasty = ({ message }) => {
   const [toastMessage, setToastMessage] = useState("");
 
   useEffect(() => {
-    setToastMessage(message);
-    setTimeout(() => {
-      setToastMessage("");
-    }, 1500);
+    console.log("Toasty message: ", message)
+    if (message !== "") {
+      setToastMessage(message);
+      setTimeout(() => {
+        setToastMessage("");
+      }, 1500);
+    }
   }, [message]);
 
   return (

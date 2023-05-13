@@ -22,8 +22,8 @@ const ChainHeader = ({ network }) => {
             process.env.REACT_APP_API + "/data/blockchains/" + network?.image
           }
           alt={network?.name}
-          width="72"
-          height="72"
+          width="70"
+          height="70"
         />
       </div>
       <div style={{ marginLeft: "20px", opacity: "0.9" }}>
