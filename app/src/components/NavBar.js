@@ -17,7 +17,10 @@ function NavBar() {
   };
 
   const onInit = (networks) => {
-    dispatch({ type: "SET_AVAILABLE_NETWORKS", payload: networks });
+    dispatch({
+      type: "SET_AVAILABLE_NETWORKS",
+      payload: networks.sort((a, b) => a.id - b.id),
+    });
   };
 
   useEffect(() => {
@@ -36,7 +39,7 @@ function NavBar() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" className="p-3">
       <Container fluid>
-        <Navbar.Brand href="#">
+        <Navbar.Brand onClick={() => history.push("/")} style={{cursor: "pointer"}}>
           <Brand />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

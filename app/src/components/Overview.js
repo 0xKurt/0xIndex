@@ -5,6 +5,8 @@ import { useParams, useHistory } from "react-router-dom/";
 
 import ChainHeader from "./ChainHeader";
 import DownloadMap from "./DownloadMap";
+import Sort from "./Sort";
+import { stringToColor } from "../other/utils";
 
 const Overview = () => {
   const { state, dispatch } = useContext(Context);
@@ -37,16 +39,48 @@ const Overview = () => {
     if (state?.network?.id) init();
   }, [state?.network?.id]);
 
-  //
+  function sortByKey(sorting, data) {
+    switch (sorting) {
+      case "cat_asc":
+        return data.sort((a, b) => a.name.localeCompare(b.name));
+      case "cat_desc":
+        return data.sort((a, b) => b.name.localeCompare(a.name));
+      case "entries_asc":
+        return data.sort((a, b) => a.projects.length - b.projects.length);
+      case "entries_desc":
+        return data.sort((a, b) => b.projects.length - a.projects.length);
+      case "color_asc":
+        return data.sort((a, b) =>
+          stringToColor(a.name).localeCompare(stringToColor(b.name)),
+        );
+      case "color_desc":
+        return data.sort((a, b) =>
+          stringToColor(b.name).localeCompare(stringToColor(a.name)),
+        );
+      default:
+        return data;
+    }
+  }
 
   return (
     <>
-      <div>
+      <div
+        id="ecosystem-overview"
+        style={{
+          backgroundColor: "#222222",
+          color: "#fff",
+        }}
+      >
         <div className="d-flex justify-content-between">
           <ChainHeader network={state.network} />
-          <DownloadMap />
+          <div className="d-flex">
+            <Sort />
+            <DownloadMap />
+          </div>
         </div>
-        {categories && categories.length > 0 && <TableGrid data={categories} />}
+        {categories && categories.length > 0 && (
+          <TableGrid data={sortByKey(state.sorting, categories)} />
+        )}
       </div>
     </>
   );

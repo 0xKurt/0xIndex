@@ -1,4 +1,4 @@
-export function stringToColor(str) {
+export function stringToColor2(str) {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
     hash = str.charCodeAt(i) + ((hash << 5) - hash);
@@ -15,4 +15,15 @@ export function stringToColor(str) {
   const saturation = 50 + (finalHash % 10);
   const lightness = 40 + (finalHash % 10);
   return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+}
+
+export function stringToColor(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length / 2; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const r = Math.floor((Math.abs(Math.sin(hash + 0)) * 256) % 256);
+  const g = Math.floor((Math.abs(Math.sin(hash + 1)) * 256) % 256);
+  const b = Math.floor((Math.abs(Math.sin(hash + 2)) * 256) % 256);
+  return `#${r.toString(16)}${g.toString(16)}${b.toString(16)}aa`;
 }
