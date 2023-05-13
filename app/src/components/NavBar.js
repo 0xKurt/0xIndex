@@ -37,9 +37,12 @@ function NavBar() {
   };
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="p-3">
-      <Container fluid>
-        <Navbar.Brand onClick={() => history.push("/")} style={{cursor: "pointer"}}>
+    <Container fluid>
+      <Navbar bg="dark" variant="dark" expand="lg" className="p-3">
+        <Navbar.Brand
+          onClick={() => history.push("/")}
+          style={{ cursor: "pointer" }}
+        >
           <Brand />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -47,7 +50,6 @@ function NavBar() {
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
-            navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
@@ -78,7 +80,6 @@ function NavBar() {
           <button
             className="btn btn-link text-light"
             onClick={toggleLightMode}
-            // style={{ color: "white", fontSize: "20px", marginLeft: "10px" }}
             style={{
               position: "relative",
               top: "-3px",
@@ -91,8 +92,8 @@ function NavBar() {
             <TbSunMoon />
           </button>
         </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      </Navbar>
+    </Container>
   );
 }
 
