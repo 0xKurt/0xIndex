@@ -1,6 +1,6 @@
 import Context from "../other/Context";
 import Project from "./Project";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 const TableBody = ({ projects, expand, maxOverride }) => {
   const {state, dispatch} = useContext(Context);

@@ -1,5 +1,4 @@
-import { Modal, Row, Col, Table } from "react-bootstrap";
-import Project from "./Project";
+import { Modal, Table } from "react-bootstrap";
 import { stringToColor } from "../other/utils";
 import TableBody from "./TableBody";
 
