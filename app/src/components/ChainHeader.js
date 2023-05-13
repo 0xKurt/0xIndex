@@ -5,6 +5,7 @@ const ChainHeader = ({ network }) => {
   return (
     <div className="d-flex align-items-center mb-3" style={{ padding: "40px" }}>
       <div
+        className="chainheaderlogowrapper"
         style={{
           width: 80,
           height: 80,
@@ -18,6 +19,7 @@ const ChainHeader = ({ network }) => {
         }}
       >
         <img
+          className="chainheaderlogo"
           src={
             process.env.REACT_APP_API + "/data/blockchains/" + network?.image
           }
@@ -27,7 +29,7 @@ const ChainHeader = ({ network }) => {
         />
       </div>
       <div style={{ marginLeft: "20px", opacity: "0.9" }}>
-        <h1 className="m-0">
+        <h1 className="m-0 chainheading">
           {network?.name} <CopyLink link={window.location.href} />
         </h1>
         <span style={{ fontSize: "20px" }}>

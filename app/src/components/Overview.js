@@ -45,6 +45,10 @@ const Overview = () => {
     if (state?.network?.id) init();
   }, [state?.network?.id]);
 
+  const sendFeedback = async () => {
+    window.open("https://t.me/kurt_me", "_blank");
+  };
+
   function sortByKey(sorting, data) {
     switch (sorting) {
       case "cat_asc":
@@ -77,14 +81,30 @@ const Overview = () => {
           color: "#fff",
         }}
       >
-        <div className="d-flex justify-content-between">
-          <ChainHeader network={state.network} />
-          <div className="d-flex gap-2">
-            <SelectCategory />
-            <MaxItems />
-            <Sort />
-            <DownloadMap />
+        <div
+          id="ecosystem-overview"
+          style={{ backgroundColor: "#222222", color: "#fff" }}
+        >
+          <div className="d-flex categorymenu">
+            <ChainHeader network={state.network} />
+            <div className="d-flex gap-2">
+              <SelectCategory />
+              <MaxItems />
+              <Sort />
+              <DownloadMap />
+            </div>
           </div>
+        </div>
+        <div
+          onClick={sendFeedback}
+          className="text-end row3"
+          style={{
+            padding: "0 15px 10px 0",
+            opacity: "0.5",
+            cursor: "pointer",
+          }}
+        >
+          Feedback? Get in touch!
         </div>
         {categories && categories.length > 0 && (
           <TableGrid data={sortByKey(state.sorting, categories)} />

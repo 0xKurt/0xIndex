@@ -27,7 +27,7 @@ const DownloadMap = () => {
   return (
     <>
       <div
-        className="d-flex align-items-center"
+        className="d-flex align-items-center downloadmap"
         style={{ padding: "40px", opacity: "0.15" }}
       >
         <div

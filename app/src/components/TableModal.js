@@ -7,7 +7,7 @@ const TableModal = ({ show, onHide, data }) => {
     <Modal
       show={show}
       onHide={onHide}
-      className="bg-dark pd-0"
+      className="bg-dark pd-0 tablemodal"
       style={{ backgroundColor: "#212529", color: "white" }}
     >
       <Modal.Body style={{ backgroundColor: "#212529", border: "none" }}>

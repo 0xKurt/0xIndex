@@ -6,6 +6,8 @@ import NavBar from "./components/NavBar";
 import Overview from "./components/Overview";
 import Header from "./components/Header";
 import ContextProvider from "./other/ContextProvider";
+// import App.css
+import "./App.css";
 
 function App() {
   return (

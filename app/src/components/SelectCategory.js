@@ -10,7 +10,7 @@ const SelectCategory = () => {
 
   return (
     <div className="d-flex flex-column align-items-start justify-content-center">
-      <span style={{ marginLeft: "15px" }}>Show Category:</span>
+      <span style={{ marginLeft: "15px" }}>Category:</span>
       <Dropdown>
         <Dropdown.Toggle variant="dark" id="dropdown-basic">
           Select

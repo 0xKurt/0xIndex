@@ -46,19 +46,13 @@ function TableGrid({ data }) {
     );
 
   return (
-    <Container fluid>
+    <Container fluid className="tablecontainer">
       {tableData.map((row, rowIndex) => (
         <Row key={rowIndex} className="mb-4">
           {row.map((col, colIndex) => (
             <>
-              {category && category === col.shortName.toLowerCase() && (
-                <TableModal
-                  show={category === col.shortName.toLowerCase()}
-                  onHide={() => history.push(`/${chain}`)}
-                  data={col}
-                />
-              )}
               <Col
+                className="tablecolumn"
                 key={colIndex}
                 xs="auto"
                 style={{
@@ -97,6 +91,13 @@ function TableGrid({ data }) {
                   </>
                 </Table>
               </Col>
+              {category && category === col.shortName.toLowerCase() && (
+                <TableModal
+                  show={category === col.shortName.toLowerCase()}
+                  onHide={() => history.push(`/${chain}`)}
+                  data={col}
+                />
+              )}
             </>
           ))}
         </Row>

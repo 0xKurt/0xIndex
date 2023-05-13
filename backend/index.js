@@ -3,8 +3,8 @@ import fs from "fs";
 import http from "http";
 import https from "https";
 import cors from "cors";
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 
 import { PrismaClient } from "@prisma/client";
@@ -15,7 +15,7 @@ const prisma = new PrismaClient();
 
 BigInt.prototype.toJSON = function () {
   return this.toString();
-}; 
+};
 
 dotenv.config();
 
@@ -33,7 +33,6 @@ app.get("/", (req, res) => {
 app.get("/blockchains/:blockchain/projects", async (req, res) => {
   const blockchainId = req.params.blockchain;
 
-  
   try {
     // Find the blockchain with the given id and include its projects with their categories
     const projectsByCategory = await prisma.category.findMany({
@@ -80,12 +79,46 @@ app.get("/blockchains", async (req, res) => {
   try {
     const blockchains = await prisma.blockchain.findMany();
 
-    const idWhitelist = [1, 8, 88];
+    const idWhitelist = [88, 37, 8, 1, 418, 413];
     const validRes = blockchains.filter((blockchain) => {
       return idWhitelist.includes(blockchain.id);
     });
     res.json(validRes);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Something went wrong");
+  }
+});
 
+app.get("/b", async (req, res) => {
+  try {
+    async function findBlockchainsWithMoreThan20Projects() {
+       const blockchains = await prisma.blockchain.findMany({
+         where: {
+           projects: {
+             some: {},
+           },
+         },
+         select: {
+           id: true,
+           projects: {
+             select: {
+               id: true,
+             },
+             take: 101, // limit the number of projects to 21
+           },
+         },
+       });
+
+       const blockchainIdsWithMoreThan20Projects = blockchains
+         .filter((blockchain) => blockchain.projects.length > 100)
+         .map((blockchain) => blockchain.id);
+
+        return blockchainIdsWithMoreThan20Projects;
+    }
+
+    const blockchains = await findBlockchainsWithMoreThan20Projects();
+    res.json(blockchains);
   } catch (error) {
     console.error(error);
     res.status(500).send("Something went wrong");

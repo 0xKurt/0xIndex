@@ -8,3 +8,62 @@ body {
   background-color: #222222;
   color: #ffffff;
 }
+
+.categorymenu {
+  /* space-between components */
+  justify-content: space-between;
+
+}
+
+@media (max-width: 740px) {
+
+  /* .categorymenuSmall {
+    flex-direction: column;
+    gap: 10px;
+  }
+*/
+  .tablecolumn {
+    margin-right: 0px;
+    margin-left: 5px;
+  } 
+  
+  .brandtext {
+    font-size: 0.7em;
+  }
+
+  .tablemodal {
+    max-width: 400px;
+  }
+
+  .downloadmap {
+    display: none !important;
+  }
+
+  .chainheading {
+    font-size: 1.5rem;
+  }
+
+  .chainheaderlogowrapper {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  .chainheaderlogo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .categorymenu {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 741px) and (max-width: 1000px) {
+  .categorymenu {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
