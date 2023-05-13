@@ -16,6 +16,10 @@ function NavBar() {
     history.push(`/${network.name.toLowerCase()}`);
   };
 
+  const networks = state.networks
+    ? [...state.networks].sort((a, b) => a.name.localeCompare(b.name))
+    : undefined;
+
   const onInit = (networks) => {
     dispatch({
       type: "SET_AVAILABLE_NETWORKS",
@@ -47,15 +51,12 @@ function NavBar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-          >
-            <Nav.Link href="#action1">Home</Nav.Link>
+          <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }}>
+            {/* <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
             <Nav.Link href="#" disabled>
               Link
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
           <NavDropdown
             id="nav-dropdown-dark-example"
@@ -65,8 +66,8 @@ function NavBar() {
             className="text-light"
             style={{ textTransform: "capitalize" }}
           >
-            {state.networks &&
-              state.networks.map((network) => (
+            {networks &&
+              networks.map((network) => (
                 <NavDropdown.Item
                   key={Math.random()}
                   // href="#action/3.1"

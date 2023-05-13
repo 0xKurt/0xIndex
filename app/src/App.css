@@ -9,6 +9,10 @@ body {
   color: #ffffff;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 .categorymenu {
   /* space-between components */
   justify-content: space-between;
@@ -25,8 +29,8 @@ body {
   .tablecolumn {
     margin-right: 0px;
     margin-left: 5px;
-  } 
-  
+  }
+
   .brandtext {
     font-size: 0.7em;
   }
