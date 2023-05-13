@@ -6,7 +6,6 @@ const Toasty = ({ message }) => {
   const [toastMessage, setToastMessage] = useState("");
 
   useEffect(() => {
-    console.log("Toasty message: ", message)
     if (message !== "") {
       setToastMessage(message);
       setTimeout(() => {
