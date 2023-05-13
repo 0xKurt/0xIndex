@@ -43,7 +43,7 @@ function Project({ project, width }) {
     <tr key={Math.floor(Math.random() * 9999998) + 1}>
       <td>
         <div style={{ display: "flex", width}}>
-          <div
+          {/* <div
             style={{
               cursor: "pointer",
               display: "flex",
@@ -55,7 +55,7 @@ function Project({ project, width }) {
           >
             &#8942;
             <ProjectMenu show={showMenu} />
-          </div>
+          </div> */}
           <div style={{ display: "flex", alignItems: "center" }}>
             <div style={{ cursor: "pointer" }} onClick={onClickLink}>
               <Image
