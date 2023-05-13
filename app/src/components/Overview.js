@@ -3,6 +3,9 @@ import Context from "../other/Context";
 import TableGrid from "./TableGrid";
 import { useParams, useHistory } from "react-router-dom/";
 
+import ChainHeader from "./ChainHeader";
+import DownloadMap from "./DownloadMap";
+
 const Overview = () => {
   const { state, dispatch } = useContext(Context);
   const [categories, setCategories] = useState([]);
@@ -34,10 +37,18 @@ const Overview = () => {
     if (state?.network?.id) init();
   }, [state?.network?.id]);
 
+  //
+
   return (
-    <div>
-      {categories && categories.length > 0 && <TableGrid data={categories} />}
-    </div>
+    <>
+      <div>
+        <div className="d-flex justify-content-between">
+          <ChainHeader network={state.network} />
+          <DownloadMap />
+        </div>
+        {categories && categories.length > 0 && <TableGrid data={categories} />}
+      </div>
+    </>
   );
 };
 
