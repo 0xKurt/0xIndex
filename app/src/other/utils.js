@@ -28,6 +28,6 @@ export function stringToColor(text) {
   const b = Math.floor((Math.abs(Math.sin(hash+2)) * 256) % 256);
 
   // modulo function on str.length to chose between aa, bb, cc, dd
-  const append = ["88", "aa", "66", "cc"][str.length % 4];
+  const append = ["88", "aa", "66", "99"][str.length % 4];
   return `#${r.toString(16)}${g.toString(16)}${b.toString(16)}${append}`;
 }

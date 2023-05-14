@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Image } from "react-bootstrap";
 import ProjectMenu from "./ProjectMenu";
+import { getProtocolImage } from "../fakeapi/api";
 function Project({ project, width }) {
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [isTextClamped, setIsTextClamped] = useState(false);
@@ -59,7 +60,7 @@ function Project({ project, width }) {
           <div style={{ display: "flex", alignItems: "center" }}>
             <div style={{ cursor: "pointer" }} onClick={onClickLink}>
               <Image
-                src={`${process.env.REACT_APP_API}/data/protocols/${project.image}`}
+                src={process.env.REACT_APP_FAKE_API === "true" ? getProtocolImage(project.image) : `${process.env.REACT_APP_API}/data/protocols/${project.image}`}
                 roundedCircle
                 width={50}
                 height={50}

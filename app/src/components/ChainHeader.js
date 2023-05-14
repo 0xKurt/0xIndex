@@ -1,3 +1,4 @@
+import { getNetworkImage } from "../fakeapi/api";
 import Brand from "./Brand";
 import CopyLink from "./CopyLink";
 
@@ -21,7 +22,7 @@ const ChainHeader = ({ network }) => {
         <img
           className="chainheaderlogo"
           src={
-            process.env.REACT_APP_API + "/data/blockchains/" + network?.image
+            process.env.REACT_APP_FAKE_API === "true" ? getNetworkImage(network.image) : process.env.REACT_APP_API + "/data/blockchains/" + network?.image
           }
           alt={network?.name}
           width="70"

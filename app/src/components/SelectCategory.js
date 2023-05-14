@@ -10,10 +10,10 @@ const SelectCategory = () => {
 
   return (
     <div className="d-flex flex-column align-items-start justify-content-center">
-      <span style={{ marginLeft: "15px" }}>Category:</span>
+      <span style={{ marginLeft: "12px" }}>Category:</span>
       <Dropdown>
         <Dropdown.Toggle variant="dark" id="dropdown-basic">
-          Select
+         Select
         </Dropdown.Toggle>
         <Dropdown.Menu variant="dark">
           {state.categories.map((cat, index) => (

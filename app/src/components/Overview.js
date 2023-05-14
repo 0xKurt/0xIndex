@@ -9,6 +9,8 @@ import Sort from "./Sort";
 import { stringToColor } from "../other/utils";
 import MaxItems from "./MaxItems";
 import SelectCategory from "./SelectCategory";
+import { images } from "../fakeapi/data/blockchains";
+import { getProjects } from "../fakeapi/api";
 
 const Overview = () => {
   const { state, dispatch } = useContext(Context);
@@ -32,10 +34,16 @@ const Overview = () => {
 
   useEffect(() => {
     const init = async () => {
-      const response = await fetch(
-        `${process.env.REACT_APP_API}/blockchains/${state.network.id}/projects`,
-      );
-      const data = await response.json();
+      const response =
+        process.env.REACT_APP_FAKE_API === "true"
+          ? ""
+          : await fetch(
+              `${process.env.REACT_APP_API}/blockchains/${state.network.id}/projects`,
+            );
+      const data =
+        process.env.REACT_APP_FAKE_API === "true"
+          ? getProjects(state.network.id)
+          : await response.json();
       setCategories(data);
       dispatch({
         type: "SET_CATEGORIES",
@@ -46,7 +54,7 @@ const Overview = () => {
   }, [state?.network?.id]);
 
   const sendFeedback = async () => {
-    window.open("https://t.me/kurt_me", "_blank");
+    window.open("https://twitter.com/_kurtme", "_blank");
   };
 
   function sortByKey(sorting, data) {

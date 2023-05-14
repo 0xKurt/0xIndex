@@ -21,11 +21,6 @@ body {
 
 @media (max-width: 740px) {
 
-  /* .categorymenuSmall {
-    flex-direction: column;
-    gap: 10px;
-  }
-*/
   .tablecolumn {
     margin-right: 0px;
     margin-left: 5px;
